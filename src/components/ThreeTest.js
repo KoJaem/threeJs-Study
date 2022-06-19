@@ -2,7 +2,7 @@ import { OrbitControls } from '@react-three/drei';
 import { Canvas } from "@react-three/fiber";
 import React from "react";
 import styled from "styled-components";
-import { PlaneModal, ReactModel, LightController } from "./index";
+import { PlaneModal, ReactModel, LightController, UserModel } from "./index";
 import { Stats } from '@react-three/drei/core';
 // import { softShadows } from '@react-three/drei/core';
 // 부드러운 그림자를 원하면 softShadows(); 사용
@@ -15,7 +15,8 @@ export const ThreeTest = () => {
         <OrbitControls />
         <Stats />
         <PlaneModal />
-        <ReactModel />
+        {/* <ReactModel /> */}
+        <UserModel />
       </Canvas>
     </Container>
   );

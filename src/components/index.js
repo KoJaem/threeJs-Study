@@ -3,3 +3,4 @@ export { LightController } from "./LightController";
 export { PlaneModal } from "./PlaneModal";
 export { ReactModel } from "./ReactModel";
 export { ThreeTest } from "./ThreeTest";
+export { UserModel } from "./UserModel";
