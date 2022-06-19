@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { CustomBox } from "./CustomBox";
+import styled from "styled-components";
+import { Canvas } from '@react-three/fiber';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StyleCanvas>
+      <ambientLight intensity={1} />
+      <CustomBox position={[0, 0, 0]} />
+    </StyleCanvas>
   );
 }
+// ambientLight : 조명 / props
 
 export default App;
+
+const StyleCanvas = styled(Canvas)`
+  background: black;
+`;
