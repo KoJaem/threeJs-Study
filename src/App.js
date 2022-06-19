@@ -1,19 +1,20 @@
-import { CustomBox } from "./CustomBox";
-import styled from "styled-components";
-import { Canvas } from '@react-three/fiber';
+import styled from 'styled-components';
+import { ThreeTest } from "./components";
 
 function App() {
   return (
-    <StyleCanvas>
-      <ambientLight intensity={1} />
-      <CustomBox position={[0, 0, 0]} />
-    </StyleCanvas>
+    <Container>
+      <ThreeTest />
+    </Container>
   );
 }
-// ambientLight : 조명 / props
 
 export default App;
 
-const StyleCanvas = styled(Canvas)`
-  background: black;
-`;
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+`

@@ -1,6 +1,6 @@
 import { useFrame } from "@react-three/fiber";
 import React, { useRef, useState } from "react";
-export function CustomBox(props) {
+export const CustomBox = (props) => {
   const ref = useRef();
   const [isClicked, setIsClicked] = useState(false);
   useFrame(() => {
