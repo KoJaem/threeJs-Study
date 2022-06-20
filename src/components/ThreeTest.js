@@ -14,7 +14,7 @@ export const ThreeTest = () => {
         <LightController />
         <OrbitControls />
         <Stats />
-        <PlaneModal />
+        {/* <PlaneModal /> */}
         {/* <ReactModel /> */}
         <UserModel />
       </Canvas>
@@ -23,7 +23,7 @@ export const ThreeTest = () => {
 };
 
 const Container = styled.div`
-  background: black;
+  background: gray;
   width: 100%;
   height: 100%;
 `;
