@@ -1,10 +1,13 @@
 import React, { useRef } from "react";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
-import Dog from "assets/Dog.obj";
+import houseObj from "assets/house.obj";
+import houseMtl from "assets/house.mtl";
 import { useFrame, useLoader } from "@react-three/fiber";
+import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader";
 
 export const UserModel = () => {
-  const obj = useLoader(OBJLoader, Dog);
+  const materials = useLoader(MTLLoader, houseMtl);
+  const obj = useLoader(OBJLoader, houseObj);
   const modelRef = useRef();
 
   useFrame(() => {

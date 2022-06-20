@@ -23,7 +23,7 @@ export const ThreeTest = () => {
 };
 
 const Container = styled.div`
-  background: white;
+  background: black;
   width: 100%;
   height: 100%;
 `;
