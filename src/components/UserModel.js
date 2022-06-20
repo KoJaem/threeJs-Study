@@ -1,13 +1,13 @@
 import React, { useRef } from "react";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
-import dogObj from "assets/dog/dog.obj";
-import dogMtl from "assets/dog/dog.mtl";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import testBoxObj from "assets/testBox.obj";
+import testBoxMtl from "assets/testBox.mtl";
+import { useFrame, useLoader } from "@react-three/fiber";
 import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader";
 
 export const UserModel = () => {
-  const materials = useLoader(MTLLoader, dogMtl);
-  const obj = useLoader(OBJLoader, dogObj, loader => {
+  const materials = useLoader(MTLLoader, testBoxMtl);
+  const obj = useLoader(OBJLoader, testBoxObj, loader => {
     materials.preload();
     loader.setMaterials(materials);
   });
@@ -15,12 +15,14 @@ export const UserModel = () => {
   const modelRef = useRef();
 
   useFrame(() => {
-  modelRef.current.rotation.y += 0.01;
+    modelRef.current.rotation.y += 0.01;
   });
+  
+
 
   return (
     <mesh position={[0, 0, 0]} ref={modelRef}>
-      <primitive object={obj} scale={4.0} />
+      <primitive object={obj} scale={1} />
     </mesh>
   );
 };
