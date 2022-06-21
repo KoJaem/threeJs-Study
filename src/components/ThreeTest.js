@@ -15,7 +15,7 @@ export const ThreeTest = () => {
         <OrbitControls />
         <Stats />
         {/* <PlaneModal /> */}
-        <ReactModel />
+        {/* <ReactModel /> */}
         <UserModel />
       </Canvas>
     </Container>

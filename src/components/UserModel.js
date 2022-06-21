@@ -4,28 +4,27 @@ import testBoxObj from "assets/testBox.obj";
 import testBoxMtl from "assets/testBox.mtl";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader";
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import seatGltf from 'assets/seat.gltf';
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import kojaemItem from "assets/kojaemItem.glb";
 
 export const UserModel = () => {
-  const materials = useLoader(MTLLoader, testBoxMtl);
-  const obj = useLoader(OBJLoader, testBoxObj, loader => {
-    materials.preload();
-    loader.setMaterials(materials);
-  });
+  // const materials = useLoader(MTLLoader, testBoxMtl);
+  // const obj = useLoader(OBJLoader, testBoxObj, loader => {
+  //   materials.preload();
+  //   loader.setMaterials(materials);
+  // });
 
   const modelRef = useRef();
 
   useFrame(() => {
     modelRef.current.rotation.y += 0.01;
   });
-    const gltf = useLoader(GLTFLoader, seatGltf);
-
+  const gltf = useLoader(GLTFLoader, kojaemItem);
 
   return (
-    <mesh position={[0, 0, 0]} ref={modelRef}>
-      <primitive object={obj} scale={1} />
-      <primitive object={gltf.scene} scale={0.1} />
+    <mesh position={[0, 0, 0]} ref={modelRef} >
+      {/* <primitive object={obj} scale={1} /> */}
+      <primitive object={gltf.scene} scale={4} />
     </mesh>
   );
 };
