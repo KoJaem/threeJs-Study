@@ -1,15 +1,14 @@
 import React, { useRef } from "react";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
-import testBoxObj from "assets/testBox.obj";
-import testBoxMtl from "assets/testBox.mtl";
-import { useFrame, useLoader } from "@react-three/fiber";
 import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader";
+import { useFrame, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import kojaemItem from "assets/kojaemItem.glb";
+import dogColor from 'assets/dogColor.glb'
 
 export const UserModel = () => {
-  // const materials = useLoader(MTLLoader, testBoxMtl);
-  // const obj = useLoader(OBJLoader, testBoxObj, loader => {
+  // const materials = useLoader(MTLLoader, testMtl);
+  // const obj = useLoader(OBJLoader, testObj, loader => {
   //   materials.preload();
   //   loader.setMaterials(materials);
   // });
@@ -19,12 +18,12 @@ export const UserModel = () => {
   useFrame(() => {
     modelRef.current.rotation.y += 0.01;
   });
-  const gltf = useLoader(GLTFLoader, kojaemItem);
+  const gltf = useLoader(GLTFLoader, dogColor);
 
   return (
-    <mesh position={[0, 0, 0]} ref={modelRef} >
-      {/* <primitive object={obj} scale={1} /> */}
-      <primitive object={gltf.scene} scale={4} />
+    <mesh position={[0, 0, 0]} ref={modelRef}>
+      <primitive object={gltf.scene} scale={1} />
+      {/* <primitive object={gltf.scene} scale={4} /> */}
     </mesh>
   );
 };
