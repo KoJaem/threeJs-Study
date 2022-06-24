@@ -12,7 +12,7 @@ export const ThreeTest = () => {
     <Container>
       <Canvas shadows camera={{ position: [0, 0, 40], fov: 80 }}>
         <LightController />
-        <OrbitControls />
+        {/* <OrbitControls /> */}
         <Stats />
         {/* <PlaneModal /> */}
         {/* <ReactModel /> */}

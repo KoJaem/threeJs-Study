@@ -1,13 +1,13 @@
 import { useFrame } from "@react-three/fiber";
-import React, { useRef, useState } from "react";
-export const CustomBox = (props) => {
-  const ref = useRef();
+import { useRef, useState } from "react";
+export const CustomBox = () => {
+  const ref = useRef<THREE.Mesh>(null);
   const [isClicked, setIsClicked] = useState(false);
   useFrame(() => {
-    ref.current.rotation.y += 0.01;
+    ref.current!.rotation.y += 0.01;
   });
   return (
-    <mesh {...props} ref={ref} onClick={() => setIsClicked(!isClicked)}>
+    <mesh ref={ref} onClick={() => setIsClicked(!isClicked)}>
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial color={isClicked ? "#9515bf" : "#00FF00"} />
     </mesh>

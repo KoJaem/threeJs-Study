@@ -2,10 +2,10 @@ import { useFrame } from "@react-three/fiber";
 import React, { useRef } from "react";
 
 export const ReactModel = () => {
-  const modelRef = useRef();
+  const modelRef = useRef<THREE.Mesh>(null);
 
   useFrame(() => {
-    modelRef.current.rotation.y += 0.01;
+    modelRef.current!.rotation.y += 0.01;
   });
 
   return (

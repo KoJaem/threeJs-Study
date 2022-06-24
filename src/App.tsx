@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 import { ThreeTest } from "./components";
 
 function App() {
@@ -17,4 +17,4 @@ const Container = styled.div`
   justify-content: center;
   width: 100%;
   height: 100vh;
-`
+`;
