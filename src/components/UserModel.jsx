@@ -4,7 +4,8 @@ import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import kojaemItem from "assets/kojaemItem.glb";
-import dogColor from 'assets/dogColor.glb'
+import dogColor from "assets/dogColor.glb";
+import sunGlb from "assets/sun.glb";
 
 export const UserModel = () => {
   // const materials = useLoader(MTLLoader, testMtl);
@@ -16,9 +17,9 @@ export const UserModel = () => {
   const modelRef = useRef();
 
   useFrame(() => {
-    modelRef.current.rotation.y += 0.01;
+    modelRef.current.rotation.y += 0.05;
   });
-  const gltf = useLoader(GLTFLoader, dogColor);
+  const gltf = useLoader(GLTFLoader, sunGlb);
 
   return (
     <mesh position={[0, 0, 0]} ref={modelRef}>
